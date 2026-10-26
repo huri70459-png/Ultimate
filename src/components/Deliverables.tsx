@@ -67,13 +67,13 @@ export default function Deliverables() {
         {/* Stats bar */}
         <div className="flex flex-wrap justify-center gap-4 mb-8">
           {[
-            { label: 'Core Modules', count: FILES.filter(f => f.type === 'module').length, color: 'emerald' },
-            { label: 'Tests', count: FILES.filter(f => f.type === 'test').length, color: 'purple' },
-            { label: 'Config/Docs', count: FILES.filter(f => f.type === 'config').length, color: 'cyan' },
-            { label: 'Demo Files', count: FILES.filter(f => f.type === 'demo').length, color: 'amber' },
+            { label: 'Core Modules', count: FILES.filter(f => f.type === 'module').length, type: 'module' as const },
+            { label: 'Tests', count: FILES.filter(f => f.type === 'test').length, type: 'test' as const },
+            { label: 'Config/Docs', count: FILES.filter(f => f.type === 'config').length, type: 'config' as const },
+            { label: 'Demo Files', count: FILES.filter(f => f.type === 'demo').length, type: 'demo' as const },
           ].map(stat => (
-            <div key={stat.label} className={`px-4 py-2 rounded-xl border ${typeColors[stat.color].bg} ${typeColors[stat.color].border}`}>
-              <span className={`text-lg font-bold ${typeColors[stat.color].text}`}>{stat.count}</span>
+            <div key={stat.label} className={`px-4 py-2 rounded-xl border ${typeColors[stat.type].bg} ${typeColors[stat.type].border}`}>
+              <span className={`text-lg font-bold ${typeColors[stat.type].text}`}>{stat.count}</span>
               <span className="text-xs text-gray-500 ml-2">{stat.label}</span>
             </div>
           ))}
