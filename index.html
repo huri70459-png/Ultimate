@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>coder-app-name</title>
+    <title>Project Brain — AI Operating System</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -17,15 +17,20 @@
         width: 100%;
         height: 100%;
       }
+      html,
+      html body {
+        background-color: #030712 !important;
+        color: #e5e7eb;
+      }
       html.light,
       html.light body {
-        background-color: #ffffff !important;
-        color: #000000;
+        background-color: #030712 !important;
+        color: #e5e7eb;
       }
       html.dark,
       html.dark body {
-        background-color: #1a1a1a !important;
-        color: #ffffff;
+        background-color: #030712 !important;
+        color: #e5e7eb;
       }
     </style>
     <script>
@@ -50,8 +55,8 @@
             }
           });
         } else {
-          // 非 iframe 环境，使用默认 light 主题
-          applyThemeToDOM("light");
+          // 非 iframe 环境，使用默认 dark 主题
+          applyThemeToDOM("dark");
         }
       })();
     </script>
